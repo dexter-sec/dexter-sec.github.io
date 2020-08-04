@@ -20,8 +20,8 @@ plainwhite:
 
   # generate social links in footer
   social_links:
-    twitter: https://twitter.com/Dexster33655205
-    github:  https://github.com/dexter-sec
+    twitter: Dexster33655205
+    github: dexter-sec
     #linkedIn: Not_yet
     rss: rss
     #dribbble: jekyll
@@ -47,7 +47,7 @@ plainwhite:
 # - about.md
 
 # Build settings
-theme: plainwhite
+#theme: plainwhite
 
 plugins:
   - jekyll-seo-tag
