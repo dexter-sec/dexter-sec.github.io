@@ -1,0 +1,8 @@
+I"1<p>MarkDown이 익숙하진 않지도 않고</p>
+
+<p>jekyll 설치하고 테마 돌리느라 시간이 좀 걸렸지만, 여튼 잘 돌아간다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bundle exec jekyll serve
+</code></pre></div></div>
+
+:ET
