@@ -17,7 +17,15 @@ layout: default
     {%- endif -%}
   </div>
   <div class="post">
-    {{ content }}
+{% if page.tags %}
+  {% for tag in page.tags %}
+    {% if site.data.tags contains tag %}
+      <span class="tag">#{{ tag }}</span>
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
+	{{ content }}
   </div>
   {%- if site.plainwhite.disqus_shortname -%}
   <div id="disqus_thread" style="margin-top:25px"></div>

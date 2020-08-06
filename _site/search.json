@@ -5,9 +5,9 @@
       "title-lower"    : "simple_web_url_and_subdomain_scanner",
       "sub-titile" : "",
       "sub-titile-lower" : "",
-      "categories" : "PythonProgramming",
-      "tags"     : "",
-      "url"      : "/python/programming/2020/08/05/Simple_Web_URL_and_Subdomain_scanner.html",
+      "categories" : "Programming",
+      "tags"     : "python, tool",
+      "url"      : "/programming/2020/08/05/Simple_Web_URL_and_Subdomain_scanner.html",
       "date"     : "2020-08-05 04:00:00 +0900",
       "content"     : "This simple code will help you when you can’t use pulic web scanner. :)퍼블릭툴을 쓰기 어렵거나 불가능한 장소에서 요긴하게 사용할 간단한 스캐너이다.feature.  Web Directory / url scan base on %Dic.txt  result will be : URL / Respons..."
     } ,

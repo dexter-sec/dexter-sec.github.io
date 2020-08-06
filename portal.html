@@ -1,0 +1,246 @@
+---
+title: Portal
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	{%- include head.html -%}
+	<style>
+	h2 {
+		font-feature-settings: "lnum";
+		background-color: #ddd;
+		width: 140px;
+		height: 140px;
+		border-radius: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center
+	}
+	body {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		font-size: 20px;
+		height: 80vh;
+	}
+	p {text-align: center; line-height: 2em;}
+	</style>
+</head>
+
+<style>
+table {
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #000000;
+}
+
+th, td {
+  text-align: left;
+  padding: 5px;
+}
+
+
+  
+</style>
+<body>
+
+  <p>Hyperlinks To Tools and useful resources</p>
+  <p> Always remember "TIMTOWTID" :)</p>
+
+  <p><button onclick="sortTable()">Sort</button></p>
+<div style="overflow-x:auto;">
+<table id="myTable">
+  <tr>
+  	<th>Type</th>
+    <th>Link</th>
+    <th>Description</th>
+  </tr>
+
+  <tr>
+  	<td>Website</td>
+    <td><a href='https://phishcheck.me/'/>phishcheck</td>
+    <td>Suspicious URL check</td>
+  </tr>
+  <tr>
+  	<td>Website</td>
+    <td><a href='https://www.kitploit.com/'/>kitploit</td>
+    <td>Exploit_and+Pentest_tools</td>
+  </tr>
+    
+  <tr>
+  	<td>Website</td>
+    <td><a href='https://www.virustotal.com/gui/'/>VirusTotal</td>
+    <td>You know the drill</td>
+  </tr>
+  
+  <tr>
+  	<td>Website</td>
+    <td><a href='https://www.malware-traffic-analysis.net/'/>Malware-traffic-analysis</td>
+    <td>Maliciou network traffic</td>
+  </tr>
+  
+  <tr>
+  	<td>Website</td>
+    <td><a href='https://otx.alienvault.com/'/>Alien-Vault</td>
+    <td>Reputation Lookup</td>
+  </tr>
+ 
+  <tr>
+  	<td>Website</td>
+    <td><a href='http://vxvault.net/'/>vx-Vault</td>
+    <td>Reputation Lookup</td>
+  </tr>  
+  
+  <tr>
+  	<td>Website</td>
+    <td><a href='https://www.shodan.io/'/>shodan</td>
+    <td>Search for hacker</td>
+  </tr>
+  
+  <tr>
+  	<td>Website</td>
+    <td><a href='https://www.malwares.com/'/>Malwares</td>
+    <td>Reputation Lookup</td>
+  </tr>
+
+  <tr>
+  	<td>Website</td>
+    <td><a href='https://urlscan.io/'/>urlscan</td>
+    <td>Sandbox for the web</td>
+  </tr>  
+
+   <tr>
+  	<td>Website</td>
+    <td><a href='https://www.exploit-db.com/'/>Exploit-db</td>
+    <td>Exploit Database</td>
+  </tr>   
+  
+   <tr>
+  	<td>Website</td>
+    <td><a href='https://pastebin.com/'/>Pastebin</td>
+    <td>Find something?</td>
+  </tr>   
+
+   <tr>
+  	<td>Website</td>
+    <td><a href='https://hunter.io/'/>hunter.io</td>
+    <td>E-mail lookup</td>
+  </tr> 
+
+  <tr>
+  	<td>Tools</td>
+    <td><a href='https://www.strictly-software.com/unpack-javascript'/>Javascript Obfuscated unpack</td>
+    <td>Unpack multiple eval statements.//remember. its just tool,</td>
+  </tr> 
+  
+  <tr>
+  	<td>Tools</td>
+    <td><a href='https://www.unphp.net/'/>PHP Obfuscated unpack</td>
+    <td>Simple Malicious PHP code decoder //remember. its just tool,</td>
+  </tr>
+  
+  <tr>
+  	<td>Tools</td>
+    <td><a href='http://jsnice.org/'/>Javascirpt deobfuscate</td>
+    <td>Simple Javascirpt deobfuscate //remember. its just tool,</td>
+  </tr>
+  
+   <tr>
+  	<td>Tools</td>
+    <td><a href='https://www.unphp.net/'/>PHP Obfuscated unpack</td>
+    <td>Simple Malicious PHP code decoder //remember. its just tool,</td>
+  </tr> 
+
+   <tr>
+  	<td>Tools</td>
+    <td><a href='https://beautifier.io/'/>JS beautifier</td>
+    <td>Javascirpt Beautifier</td>
+  </tr>   
+
+   <tr>
+  	<td>Tools</td>
+    <td><a href='https://regexper.com/'/>Regexr</td>
+    <td>Visualize for PCRE</td>
+  </tr> 
+  
+  <tr>
+  	<td>Tools</td>
+    <td><a href='https://www.hybrid-analysis.com/'/>hybrid-analysis</td>
+    <td>Sandbox for Malware analysis</td>
+  </tr>
+
+  <tr>
+  	<td>Tools</td>
+    <td><a href='https://any.run/'/>Any_run</td>
+    <td>Sandbox for Malware analysis</td>
+  </tr>
+  
+   <tr>
+  	<td>Tools</td>
+    <td><a href='https://regexr.com/'/>Regexr</td>
+    <td>Test field for PCRE</td>
+  </tr>  
+
+   <tr>
+  	<td>Cheat_sheet</td>
+    <td><a href='https://github.com/swisskyrepo/PayloadsAllTheThings'/>Allthegggggggoodthings</td>
+    <td>PayloadsAllTheThings.</td>
+  </tr>   
+
+   <tr>
+  	<td>Cheat_sheet</td>
+    <td><a href='https://kakyouim.hatenablog.com/entry/2020/05/27/010807'/>Windows kernel exploit cheat sheat</td>
+    <td>Windows kernel exploit cheat sheat</td>
+  </tr>  
+  
+  
+  <tr>
+  	<td>Blog</td>
+    <td><a href='#'/>TEST</td>
+    <td>For_TEST #Testing</td>
+  </tr>
+</table>
+
+<script>
+function sortTable() {
+  var table, rows, switching, i, x, y, shouldSwitch;
+  table = document.getElementById("myTable");
+  switching = true;
+  /*Make a loop that will continue until
+  no switching has been done:*/
+  while (switching) {
+    //start by saying: no switching is done:
+    switching = false;
+    rows = table.rows;
+    /*Loop through all table rows (except the
+    first, which contains table headers):*/
+    for (i = 1; i < (rows.length - 1); i++) {
+      //start by saying there should be no switching:
+      shouldSwitch = false;
+      /*Get the two elements you want to compare,
+      one from current row and one from the next:*/
+      x = rows[i].getElementsByTagName("TD")[0];
+      y = rows[i + 1].getElementsByTagName("TD")[0];
+      //check if the two rows should switch place:
+      if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+        //if so, mark as a switch and break the loop:
+        shouldSwitch = true;
+        break;
+      }
+    }
+    if (shouldSwitch) {
+      /*If a switch has been marked, make the switch
+      and mark that a switch has been done:*/
+      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+      switching = true;
+    }
+  }
+}
+</script>
+
+</body>
+</html>
+
+

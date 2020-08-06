@@ -2,7 +2,8 @@
 layout: post
 title:  "Simple_Web_URL_and_Subdomain_scanner"
 date:   2020-08-05 04:00
-categories: Python Programming
+categories: Programming
+tags: [python, tool]
 ---
   
 This simple code will help you when you can't use pulic web scanner. :)  
