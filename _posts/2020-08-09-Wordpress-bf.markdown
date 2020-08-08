@@ -16,7 +16,7 @@ TL;DR
 **yaostSEO plugin** 
 
 
-![](./assets/yoast-sitemap-index-noauthors.png "img")
+![](./yoast-sitemap-index-noauthors.png "img")
 
 >GET http://target#com/author-sitemap.xml
 
@@ -32,7 +32,7 @@ TL;DR
 >GET http://target#com/wp-json/wp/v2/users
 >GET http://target#com/wp-json/wp/v2/users/?per_page=100&page=1
 
-![](./assets/wpapiuser.png)
+![](./wpapiuser.png)
 
  - Wordpress REST API 접근권한 설정이 미비한경우, users function을 이용해, 유저/어드민 정보를 확보 할 수 있음. 
 
