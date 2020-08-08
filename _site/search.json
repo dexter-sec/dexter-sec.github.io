@@ -1,6 +1,18 @@
 [
   
     {
+      "title"    : "TIP For Wordpress Login Bruteforce",
+      "title-lower"    : "tip for wordpress login bruteforce",
+      "sub-titile" : "",
+      "sub-titile-lower" : "",
+      "categories" : "Security",
+      "tags"     : "bugbounty, bugbountytip, vulnerability",
+      "url"      : "/security/2020/08/09/Wordpress-bf.html",
+      "date"     : "2020-08-09 07:00:00 +0900",
+      "content"     : "Tip for Get admin info of WordpressTL;DR  Check  author list(author-sitemap.xml) and WP REST API(/wp-json/wp/v2/users) before try Login-BF to Wordpress,yaostSEO plugin  GET http://target#com/author..."
+    } ,
+  
+    {
       "title"    : "Simple_Web_URL_and_Subdomain_scanner",
       "title-lower"    : "simple_web_url_and_subdomain_scanner",
       "sub-titile" : "",
