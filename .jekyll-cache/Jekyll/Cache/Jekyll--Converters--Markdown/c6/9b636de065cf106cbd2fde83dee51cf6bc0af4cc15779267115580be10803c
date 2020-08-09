@@ -1,0 +1,54 @@
+I"�<h1 id="tip-for-get-admin-info-of-wordpress">Tip for Get admin info of Wordpress</h1>
+
+<h3 id="tldr">TL;DR</h3>
+<ul>
+  <li>Check  author list(author-sitemap.xml) and WP REST API(/wp-json/wp/v2/users) before try Login-BF to Wordpress,
+ 
+ 
+ 
+ 
+    <h3 id="yaostseo-plugin"><strong>yaostSEO plugin</strong></h3>
+  </li>
+</ul>
+
+<p><img src="/assets/yoast-sitemap-index-noauthors.png" alt="" title="img" /></p>
+
+<blockquote>
+  <p>GET http://target#com/author-sitemap.xml</p>
+</blockquote>
+
+<ul>
+  <li>WordPress는 웹 사이트에 내용을 게시하는 모든 사용자를 위해 작성자 보관 페이지를 가지고있다.</li>
+  <li>기본적으로 WordPress는 사용자가 Author Archive 페이지 URL에 로그인하는 ‘username’을 사용하며 이를 변경할 수 있는 방법을 제공하지 않는다.</li>
+  <li>yaostSEO가 설치되면 기본적으로 사용자 이름으로 작성된 모든 작성자 URL을 포함하는 작성자 보관 시트맵을 작성하도록 활성화된다.  (Defualt)</li>
+  <li>고로, 해당 파일내 ‘user name’으로 Login Bruteforce를 시도할 수 있다.</li>
+  <li>Check  author list(author-sitemap.xml) and WP REST API(/wp-json/wp/v2/users) before try Login-BF to Wordpress,
+ 
+ 
+ 
+ 
+ 
+    <h3 id="wordpres-rest-api"><strong>Wordpres REST API</strong></h3>
+    <blockquote>
+      <p>GET http://target#com/wp-json/wp/v2/users
+GET http://target#com/wp-json/wp/v2/users/?per_page=100&amp;page=1</p>
+    </blockquote>
+  </li>
+</ul>
+
+<p><img src="/assets/wpapiuser.png" alt="" /></p>
+
+<ul>
+  <li>Wordpress REST API 접근권한 설정이 미비한경우, users function을 이용해, 유저/어드민 정보를 확보 할 수 있음.</li>
+  <li>Check  author list(author-sitemap.xml) and WP REST API(/wp-json/wp/v2/users) before try Login-BF to Wordpress,
+ 
+ 
+ 
+ </li>
+</ul>
+
+<p>Ref). 
+https://developer.wordpress.org/rest-api/
+https://blog.sucuri.net/2020/03/wp-4-7-wp-json-content-injection.html</p>
+
+:ET

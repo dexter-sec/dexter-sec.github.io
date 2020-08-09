@@ -16,6 +16,11 @@ layout: default
     </ul>
     {%- endif -%}
   </div>
+  <div style="text-align: left;">
+	<a href="http://hits.dwyl.com/{{ site.url | remove_first: 'https://' | remove_first: 'http://' }}/{{ page.url | remove_first: '/' | replace: '/', '-' }}" target="_blank">
+	  <img src="http://hits.dwyl.com/{{ site.url | remove_first: 'https://' | remove_first: 'http://' }}/{{ page.url | remove_first: '/' | replace: '/', '-' }}.svg" />
+	</a>
+  </div> 
   <div class="post">
 {% if page.tags %}
   {% for tag in page.tags %}
