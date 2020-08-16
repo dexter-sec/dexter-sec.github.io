@@ -1,6 +1,18 @@
 [
   
     {
+      "title"    : "Script_for_subdomain_finder",
+      "title-lower"    : "script_for_subdomain_finder",
+      "sub-titile" : "",
+      "sub-titile-lower" : "",
+      "categories" : "Security",
+      "tags"     : "bugbountytip",
+      "url"      : "/security/2020/08/16/Script_for_subdomain_finder.html",
+      "date"     : "2020-08-16 08:00:00 +0900",
+      "content"     : "Passive Subdomain 스캔에 많은 툴이 있지만, 자동화를 위해 몇가지 추려보자면,  Amass (owasp, 단순 서브도메인 파이더 이외 기능이 좋다.)  shosubgo (shodan API를 사용한다, 쇼단 api 키가 필요하다)  subfinder (projectdiscorvery 브랜치 중 일부)물론 매번 같은 프로젝트에 같은 툴을 ..."
+    } ,
+  
+    {
       "title"    : "XXE_Cheat_sheet",
       "title-lower"    : "xxe_cheat_sheet",
       "sub-titile" : "",

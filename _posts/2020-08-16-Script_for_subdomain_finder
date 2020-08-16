@@ -1,0 +1,135 @@
+---
+layout: post
+title:  "Script_for_subdomain_finder"
+date:   2020-08-16 08:00 +0900
+categories: Security
+tags: [bugbountytip]
+---
+
+
+
+<p align="center"><img src="https://media.giphy.com/media/2Y8Iq3xe121Ba3hUAM/giphy.gif"></p>
+<br  />
+<br  />
+<br  />
+<br  />
+Passive Subdomain 스캔에 많은 툴이 있지만, 자동화를 위해 몇가지 추려보자면, 
+
+ - Amass (owasp, 단순 서브도메인 파이더 이외 기능이 좋다.) 
+ - shosubgo (shodan API를 사용한다, 쇼단 api 키가 필요하다)
+ - subfinder (projectdiscorvery 브랜치 중 일부) 
+
+물론 매번 같은 프로젝트에 같은 툴을 사용하는건 아니지만, subfinder 만큼은 자주 애용하니, 간단한 자동화 스크립트로 결과물을 바로 써먹을 수 있게 만들어 보자. 
+<br />
+(Active domain Scanner 도 시간나면 정리를 해야 하는데.. ) 
+<br />
+<br />
+
+### so what am i trying to do...
+
+> subfind -d $domain -silent 
+>> requests -status good 
+>>> nuclei ? or automatic vuln check
+
+
+<br />
+
+***Simple Python script for Validation of target domain***
+```
+#target_vaild_tester.py
+import requests
+import sys
+
+requests.packages.urllib3.disable_warnings()
+
+
+#url validation확인
+def urlcheck(url):
+    if not (url.startswith('http://') or url.startswith('https://')):
+       # print('you need define http/https to your target, defualt = https')
+        url = 'https://'+url
+    return url
+
+def Valid_check(sublist):
+    with open(sublist, 'rt', encoding='utf=8')as file:
+        line = None
+        while line != '':
+            try:
+                line = file.readline()
+                Host = line.strip('\n')  # 파일에서 읽어온 문자열에서 \n 삭제하여 저장
+                Httpd_Host = urlcheck(Host)
+                response = requests.get(Httpd_Host, allow_redirects=False, verify=False)
+                size = len(response.content)
+                print(Httpd_Host, response.status_code, size)
+                save_result(Httpd_Host+'\n')
+            except Exception:
+                print('HTTP_Request_Err')
+                pass
+
+
+def save_result(data):
+    f = open("./subdoamin_valid_check.txt", 'a')
+    f.write(data)
+    f.close()
+
+
+target=sys.argv[1]
+Valid_target=Valid_check(target)
+```
+도메인이 python requests 의 exceptions을 발생시키지 않고 정상적인 송수신이 된거면, 다른 프로그램에 넣고 돌려도 탈날 가능성이 적다. 
+<br />
+그럼 이제 subfinder랑 간단하게 묶고, 결과 값을 바로 쓸 수 있게 가공하자 . 
+<br  />
+<br  />
+
+***Simple shell script for Subfinder***
+```
+#!/bin/bash
+
+
+echo "Usage: dexsub.sh [root_domain]"
+
+if [ -z "$1" ];then 
+	exit 100
+fi
+
+echo "# root name: $1"
+echo ""
+
+
+#subfinder_result_file 
+subfinder_result="subfinder_output.txt"
+
+#target_valid_check_result_file
+valid_check_result="subdoamin_valid_check.txt"
+
+
+echo "==============Subfinder=============="
+subfinder -d $1 -silent -o ${subfinder_result} -silent
+echo "================Done================="
+echo ""
+echo "# subfinder_output_done"
+echo "# Target Valid check script Initiate"
+echo ""
+echo "==============Valid_check============="
+python3 target_vaild_tester.py ${subfinder_result}
+echo "================Done=================="
+echo ""
+echo "# Valid check done"
+echo ""
+echo "===============result================"
+echo "# Subfinder result File name: ${subfinder_result} "
+echo "# Valid Target result File name: ${valid_check_result}"
+
+exit 100
+```
+<br />
+OK. IT's Looking good now. 
+
+![](/assets/dexsub.png)
+<p align="center"><img src="https://media.giphy.com/media/10Fqq02NlCVeDu/giphy.gif"></p>
+<br  />
+
+### Todo
+여기에 cron + vuln scan 조합이나, cron + dicsearch 조합으로 바운터봇에 노티까지 돌려봐야 겠다. 
+
